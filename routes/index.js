@@ -32,8 +32,8 @@ router.post('/deed', function(req, res, next) {
 
 });
 
-/* GET stuff from database */
-router.get('/deed', function(req, res, next) {
+/* GET all deeds from database */
+router.get('/deeds', function(req, res, next) {
     console.log("In the GET route?");
     var requestname = req.query["q"]
     console.log(requestname)
@@ -49,6 +49,7 @@ router.get('/deed', function(req, res, next) {
         res.json(deedList); //Then send the deeds
     });
 });
+
 
 // Get all of the names from the database
 router.get('/names', function(req, res, next) {

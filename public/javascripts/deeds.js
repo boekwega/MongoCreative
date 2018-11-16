@@ -38,7 +38,6 @@ $(document).ready(function() {
         });
     });
 
-    // $("#niceListBtn").submit(function() {
     $("#viewNiceListBtn").click(function(e) {
         e.preventDefault();
         console.log("We heard the button click!");
@@ -50,7 +49,8 @@ $(document).ready(function() {
             var everything = "";
             for (var name in data) {
                 elmt = data[name];
-                everything += "<li><a href='deedList.html'>" + elmt.Name + "</a></li>";
+                // everything += "<li><a href='deedList.html'>" + elmt.Name + "</a></li>";
+                everything += "<li>" + elmt.Name + "</li>";
             }
             // everything += "</ul>";
             $("#nameList").html(everything);
@@ -61,12 +61,24 @@ $(document).ready(function() {
     });
 
 
-    function listenForLineClicks() {
-        $('li').click(function() {
-            alert('li clicked.');
-            console.log("li clicked");
+    $("#viewDeedListBtn").click(function(e) {
+        e.preventDefault();
+        console.log("We heard the button click!");
+        var url = "deeds";
+        console.log(url);
+        $.getJSON(url, function(data) {
+            console.log(data);
+
+            var everything = "";
+            for (var entry in data) {
+                elmt = data[entry];
+                everything += "<li>" + elmt.Deed + "</li>";
+            }
+            $("#deedList").html(everything);
         });
-    };
+        
+    });
+
 
     // This is the one that there's no help for
     $("#deleteName").click(function() {
@@ -88,7 +100,7 @@ $(document).ready(function() {
             }
         })
 
-    })
+    });
 
 
 });
