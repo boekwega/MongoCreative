@@ -43,19 +43,20 @@ $(document).ready(function() {
         console.log(url);
         $.getJSON(url, function(data) {
             console.log(data);
-            var everything = "<ul>";
+            // var everything = "<ul>";
+            var everything = "";
             for (var name in data) {
                 elmt = data[name];
                 everything += "<li>" + elmt.Name + "</li>";
             }
-            everything += "</ul>";
+            // everything += "</ul>";
             $("#nameList").html(everything);
         });
     });
 
     // This is the one that there's no help for
     $("#deleteName").click(function() {
-        
+
         // $("#deeds").html("");
         console.log("inside deleteName click listener")
         var name = $("#name").val();
