@@ -50,27 +50,15 @@ router.get('/deed', function(req, res, next) {
     });
 });
 
-router.get('/names', function(req, res, next) {
-    console.log("In get names route");
-    Deed.find({}, function(err, list) {
-
-        if (err) return console.error(err); //If there's an error, print it out
-        else {
-            console.log(list); //Otherwise console log the things you found
-        }
-        res.json(list); //Then send the list
-    })
-})
-
 //deletes everything from the database
 router.delete('/deed', function(req, res, next) {
 
     var requestname = req.query["q"]
-    console.log(requestname)
+    console.log("requestname is "+ requestname)
     var obj = {};
     if (requestname) { //if there's something there
         obj = { Name: requestname }
-        console.log(obj);
+        console.log("object is: " + obj);
         Deed.find(obj).remove(function(err, deedList) { //Calls the find() method on your database
 
             if (err) return console.error(err); //If there's an error, print it out
@@ -83,9 +71,7 @@ router.delete('/deed', function(req, res, next) {
         })
 
     }
-    else {
-        console.log("no request");
-    }
+  
 
 });
 

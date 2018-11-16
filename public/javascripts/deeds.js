@@ -32,8 +32,8 @@ $(document).ready(function() {
             }
             everything += "</ul>";
             $("#deeds").html(everything);
-        })
-    })
+        });
+    });
 
     // niceListBtn.addEventListener('click' function() {
     // niceListBtn.click(function() {
@@ -52,15 +52,15 @@ $(document).ready(function() {
             }
             everything += "</ul>";
             $("#nameList").html(everything);
-        })
-    })
+        });
+    });
 
     // This is the one that there's no help for
     $("#deleteName").click(function() {
 
         // $("#deeds").html("");
-
-        var name = $("#query").val();
+        console.log("inside deleteName click listener")
+        var name = $("#name").val();
         var url = "deed?q=" + name;
         console.log("URL= " + URL)
 
@@ -71,6 +71,7 @@ $(document).ready(function() {
             type: "DELETE",
             success: function(data, textStatus) {
                 $("#done").html(textStatus);
+                console.log(textStatus)
             }
         })
 
