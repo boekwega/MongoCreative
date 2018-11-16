@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>List!</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="javascripts/deeds.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+
+</head>
+
+
+    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
+        <form id="commentForm" action="">
+            <label for="name">Enter Name: </label><input type="text" id="name" placeholder="Name"><br>
+            <label for="deed">Their Good Deed: </label><input type="text" id="deed" placeholder="Good Deed"><br>
+        </form>
+
+    </div>
+
+    <button id="submintEntry" class="w3-btn w3-teal w3-border w3-border-black">Submit Entry</button>
+    <button id="getDeeds" class="w3-btn w3-teal w3-border w3-border-black">Get Deeds</button>
+
+    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
+
+        <form id="queryForm" action="">
+            <label for="name">Query: </label><input type="text" id="query" placeholder="Query"><br>
+        </form>
+
+        <button id="deleteName" class="w3-btn w3-teal w3-border w3-border-black">Delete All</button>
+    </div>
+
+    <div class="w3-panel w3-leftbar w3-teal w3-xxlarge w3-serif">
+        <div id="json"></div>
+        <div id="done"></div>
+    </div>
+
+    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
+        <div id="deeds"></div>
+    </div>
+    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
+        <form id="commentForm" action="">
+            <label for="name">Enter Name: </label><input type="text" id="name" placeholder="Name"><br>
+            <label for="deed">Their Good Deed: </label><input type="text" id="deed" placeholder="Good Deed"><br>
+        </form>
+
+    </div>
+
+    <button id="submintEntry" class="w3-btn w3-teal w3-border w3-border-black">Submit Entry</button>
+    <button id="getDeeds" class="w3-btn w3-teal w3-border w3-border-black">Get Deeds</button>
+
+    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
+
+        <form id="queryForm" action="">
+            <label for="name">Query: </label><input type="text" id="query" placeholder="Query"><br>
+        </form>
+
+        <button id="deleteName" class="w3-btn w3-teal w3-border w3-border-black">Delete All</button>
+    </div>
+
+    <div class="w3-panel w3-leftbar w3-teal w3-xxlarge w3-serif">
+        <div id="json"></div>
+        <div id="done"></div>
+    </div>
+
+    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
+        <div id="deeds"></div>
+    </div>
+
+<body>

@@ -35,9 +35,14 @@ $(document).ready(function() {
     // This is the one that there's no help for
     $("#deleteName").click(function(){
         
-        $("#deeds").html("");
+        // $("#deeds").html("");
         
-        var url = "deed"; //gets all of the deeds
+        var name = $("#query").val();
+        var url = "deed?q=" + name;
+        console.log("URL= "+URL)
+        
+        
+        // var url = "deed"; //gets all of the deeds
         $.ajax({
             url: url,
             type: "DELETE",

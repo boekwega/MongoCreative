@@ -4,45 +4,30 @@
 <head>
     <title>List!</title>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="javascripts/deeds.js"></script>
+    <!--<script src="javascripts/deeds.js"></script>-->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+
 </head>
 
 <body>
+    <div class="text-center">
+        <img width="20%" src="https://noticias.gospelmais.com.br/files/2016/12/papai-noel-irrelevante.jpg" alt="tired santa">
+        <h1>Help Santa out . . .</h1>
 
-    <div class="w3-container w3-teal">
-        <h1>Mongo Creative Project</h1>
+        <div class="vSpace"></div>
+
+        <div>
+            <!--<button class="w3-button w3-green">Add name to nice list</button>-->
+            <input class="w3-button w3-green" type="button" value="Add name to nice list" onclick="location.href='add.html'"/>
+            <button class="w3-button w3-green">Remove name from nice list</button>
+            <br><br>
+            <Button class="w3-button w3-green">View Nice List</Button>
+        </div>
+
     </div>
 
-
-    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
-        <form id="commentForm" action="">
-            <label for="name">Enter Name: </label><input type="text" id="name" placeholder="Name"><br>
-            <label for="deed">Their Good Deed: </label><input type="text" id="deed" placeholder="Good Deed"><br>
-        </form>
-
-    </div>
-
-    <button id="submintEntry" class="w3-btn w3-teal w3-border w3-border-black">Submit Entry</button>
-    <button id="getDeeds" class="w3-btn w3-teal w3-border w3-border-black">Get Deeds</button>
-
-    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
-
-        <form id="queryForm" action="">
-            <label for="name">Query: </label><input type="text" id="query" placeholder="Query"><br>
-        </form>
-
-        <button id="deleteName" class="w3-btn w3-teal w3-border w3-border-black">Delete All</button>
-    </div>
-
-    <div class="w3-panel w3-leftbar w3-teal w3-xxlarge w3-serif">
-        <div id="json"></div>
-        <div id="done"></div>
-    </div>
-
-    <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
-        <div id="deeds"></div>
-    </div>
 
 
 </body>
