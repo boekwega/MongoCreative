@@ -80,10 +80,10 @@ router.delete('/deed', function(req, res, next) {
 
                 res.sendStatus(200); // we need this or it'll hang for 30 seconds.
             }
-
         })
-
     }
+    
+    
   
 
 });
