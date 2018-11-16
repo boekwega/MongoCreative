@@ -50,6 +50,18 @@ router.get('/deed', function(req, res, next) {
     });
 });
 
+router.get('/names', function(req, res, next) {
+    console.log("In get names route");
+    Deed.find({}, function(err, list) {
+
+        if (err) return console.error(err); //If there's an error, print it out
+        else {
+            console.log(list); //Otherwise console log the things you found
+        }
+        res.json(list); //Then send the list
+    })
+})
+
 //deletes everything from the database
 router.delete('/deed', function(req, res, next) {
 

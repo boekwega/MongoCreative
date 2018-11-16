@@ -1,5 +1,8 @@
 $(document).ready(function() {
-    $("#submintEntry").click(function() {
+    
+    $("#submitEntry").click(function() {
+        
+        console.log("heard the submit entry button click");
         var myobj = { Name: $("#name").val(), Deed: $("#deed").val() };
         jobj = JSON.stringify(myobj);
         $("#json").text(jobj);
@@ -19,7 +22,7 @@ $(document).ready(function() {
     $("#getDeeds").click(function() {
         var name = $("#query").val();
         var URL = "deed?q=" + name;
-        console.log("URL= "+URL)
+        console.log("URL= " + URL)
         $.getJSON(URL, function(data) {
             console.log(data);
             var everything = "<ul>";
@@ -31,17 +34,37 @@ $(document).ready(function() {
             $("#deeds").html(everything);
         })
     })
-    
+
+    // niceListBtn.addEventListener('click' function() {
+    // niceListBtn.click(function() {
+    // $("#niceListBtn").button().click(function() {
+    // $("#niceListBtn").submit(function() {
+    $("#niceListBtn").click(function() {
+        console.log("We heard the button click!");
+        var url = "names";
+        console.log("url= " + URL);
+        $.getJSON(URL, function(data) {
+            console.log(data);
+            var everything = "<ul>";
+            for (var name in data) {
+                elmt = data[name];
+                everything += "<li>" + elmt.Name + "</li>";
+            }
+            everything += "</ul>";
+            $("#nameList").html(everything);
+        })
+    })
+
     // This is the one that there's no help for
-    $("#deleteName").click(function(){
-        
+    $("#deleteName").click(function() {
+
         // $("#deeds").html("");
-        
+
         var name = $("#query").val();
         var url = "deed?q=" + name;
-        console.log("URL= "+URL)
-        
-        
+        console.log("URL= " + URL)
+
+
         // var url = "deed"; //gets all of the deeds
         $.ajax({
             url: url,
@@ -50,9 +73,7 @@ $(document).ready(function() {
                 $("#done").html(textStatus);
             }
         })
-        
+
     })
 
 });
-
-
