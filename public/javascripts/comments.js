@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    $("#postComment").click(function() {
-        var myobj = { Name: $("#name").val(), Comment: $("#comment").val() };
+    $("#submintEntry").click(function() {
+        var myobj = { Name: $("#name").val(), Deed: $("#deed").val() };
         jobj = JSON.stringify(myobj);
         $("#json").text(jobj);
         console.log(jobj)
-        var url = "comment";
+        var url = "deed";
         $.ajax({
             url: url,
             type: "POST",
@@ -16,28 +16,28 @@ $(document).ready(function() {
         })
     });
 
-    $("#getComments").click(function() {
+    $("#getDeeds").click(function() {
         var name = $("#query").val();
-        var URL = "comment?q=" + name;
+        var URL = "deed?q=" + name;
         console.log("URL= "+URL)
         $.getJSON(URL, function(data) {
             console.log(data);
             var everything = "<ul>";
-            for (var comment in data) {
-                com = data[comment];
-                everything += "<li> Name: " + com.Name + " -- Comment: " + com.Comment + "</li>";
+            for (var deed in data) {
+                com = data[deed];
+                everything += "<li> Name: " + com.Name + " -- Deed: " + com.Deed + "</li>";
             }
             everything += "</ul>";
-            $("#comments").html(everything);
+            $("#deeds").html(everything);
         })
     })
     
     // This is the one that there's no help for
-    $("#deleteComments").click(function(){
+    $("#deleteName").click(function(){
         
-        $("#comments").html("");
+        $("#deeds").html("");
         
-        var url = "comment"; //gets all of the comments
+        var url = "deed"; //gets all of the deeds
         $.ajax({
             url: url,
             type: "DELETE",
