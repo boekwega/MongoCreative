@@ -46,7 +46,7 @@ $(document).ready(function() {
         $.getJSON(url, function(data) {
             console.log(data);
             // var everything = "<ul>";
-            var everything = "";
+            var everything = "<h class=\"w3-green\">Nice List</h>";
             for (var name in data) {
                 elmt = data[name];
                 // everything += "<li><a href='deedList.html'>" + elmt.Name + "</a></li>";
@@ -69,7 +69,7 @@ $(document).ready(function() {
         $.getJSON(url, function(data) {
             console.log(data);
 
-            var everything = "";
+            var everything = "<h class=\"w3-green\">Good Deeds</h>";
             for (var entry in data) {
                 elmt = data[entry];
                 everything += "<li>" + elmt.Deed + "</li>";
