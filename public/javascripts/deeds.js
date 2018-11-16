@@ -3,23 +3,23 @@ $(document).ready(function() {
     $("#submitEntry").click(function() {
 
         console.log("heard the submit entry button click");
-        if($("#name").val()=="" || $("#deed").val() ==""){console.log("You entered an empty name")}
-        else{
-        var myobj = { Name: $("#name").val(), Deed: $("#deed").val() };
-        jobj = JSON.stringify(myobj);
-        $("#json").text(jobj);
-        console.log(jobj)
-        var url = "deed";
-        $.ajax({
-            url: url,
-            type: "POST",
-            data: jobj,
-            contentType: "application/json; charset=utf-8",
-            success: function(data, textStatus) {
-                $("#done").html(textStatus);
-            }
-        })
-    }
+        if ($("#name").val() == "" || $("#deed").val() == "") { console.log("You entered an empty name") }
+        else {
+            var myobj = { Name: $("#name").val(), Deed: $("#deed").val() };
+            jobj = JSON.stringify(myobj);
+            $("#json").text(jobj);
+            console.log(jobj)
+            var url = "deed";
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: jobj,
+                contentType: "application/json; charset=utf-8",
+                success: function(data, textStatus) {
+                    $("#done").html(textStatus);
+                }
+            })
+        }
     });
 
     $("#getDeeds").click(function() {
@@ -50,12 +50,23 @@ $(document).ready(function() {
             var everything = "";
             for (var name in data) {
                 elmt = data[name];
-                everything += "<li>" + elmt.Name + "</li>";
+                everything += "<li><a href=\"deedList.html\"" + elmt.Name + "</a></li>";
             }
             // everything += "</ul>";
             $("#nameList").html(everything);
         });
+        
+        
+
     });
+
+
+    function listenForLineClicks() {
+        $('li').click(function() {
+            alert('li clicked.');
+            console.log("li clicked");
+        });
+    };
 
     // This is the one that there's no help for
     $("#deleteName").click(function() {
@@ -78,5 +89,6 @@ $(document).ready(function() {
         })
 
     })
+
 
 });

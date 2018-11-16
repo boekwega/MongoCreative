@@ -1,3 +1,7 @@
 .vSpace {
     margin-bottom: 3cm
 }
+
+ul li{
+  cursor:pointer; /*  <------this will change the cursor to hand cursor*/
+}
