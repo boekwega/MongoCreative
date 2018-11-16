@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    
+
     $("#submitEntry").click(function() {
-        
+
         console.log("heard the submit entry button click");
         var myobj = { Name: $("#name").val(), Deed: $("#deed").val() };
         jobj = JSON.stringify(myobj);
@@ -39,11 +39,12 @@ $(document).ready(function() {
     // niceListBtn.click(function() {
     // $("#niceListBtn").button().click(function() {
     // $("#niceListBtn").submit(function() {
-    $("#niceListBtn").click(function() {
+    $("#viewNiceListBtn").click(function(e) {
+        e.preventDefault();
         console.log("We heard the button click!");
         var url = "names";
-        console.log("url= " + URL);
-        $.getJSON(URL, function(data) {
+        console.log(url);
+        $.getJSON(url, function(data) {
             console.log(data);
             var everything = "<ul>";
             for (var name in data) {
@@ -57,7 +58,7 @@ $(document).ready(function() {
 
     // This is the one that there's no help for
     $("#deleteName").click(function() {
-
+        
         // $("#deeds").html("");
         console.log("inside deleteName click listener")
         var name = $("#name").val();
