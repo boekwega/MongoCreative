@@ -35,9 +35,6 @@ $(document).ready(function() {
         });
     });
 
-    // niceListBtn.addEventListener('click' function() {
-    // niceListBtn.click(function() {
-    // $("#niceListBtn").button().click(function() {
     // $("#niceListBtn").submit(function() {
     $("#viewNiceListBtn").click(function(e) {
         e.preventDefault();
