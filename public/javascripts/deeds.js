@@ -3,6 +3,8 @@ $(document).ready(function() {
     $("#submitEntry").click(function() {
 
         console.log("heard the submit entry button click");
+        if($("#name").val()=="" || $("#deed").val() ==""){console.log("You entered an empty name")}
+        else{
         var myobj = { Name: $("#name").val(), Deed: $("#deed").val() };
         jobj = JSON.stringify(myobj);
         $("#json").text(jobj);
@@ -17,6 +19,7 @@ $(document).ready(function() {
                 $("#done").html(textStatus);
             }
         })
+    }
     });
 
     $("#getDeeds").click(function() {
