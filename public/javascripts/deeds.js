@@ -35,9 +35,13 @@ $(document).ready(function() {
         });
     });
 
+<<<<<<< Updated upstream
     // $("#niceListBtn").submit(function() {
     $("#viewNiceListBtn").click(function(e) {
         e.preventDefault();
+=======
+    $("#niceListBtn").click(function() {
+>>>>>>> Stashed changes
         console.log("We heard the button click!");
         var url = "names";
         console.log(url);
