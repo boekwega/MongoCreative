@@ -50,7 +50,7 @@ $(document).ready(function() {
             var everything = "";
             for (var name in data) {
                 elmt = data[name];
-                everything += "<li><a href=\"deedList.html\"" + elmt.Name + "</a></li>";
+                everything += "<li><a href='deedList.html'>" + elmt.Name + "</a></li>";
             }
             // everything += "</ul>";
             $("#nameList").html(everything);
